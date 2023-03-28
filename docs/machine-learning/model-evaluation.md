@@ -2,7 +2,7 @@
 
 ## Splitting our data for training, testing, and validation
 
-![img.png](img.png)
+![img.png](assets/img_4.png)
 
 !!! info
 

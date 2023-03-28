@@ -37,7 +37,7 @@ Let's take an example :
     ##Assuming you want to train a classification model to classify eyes diseases, with a camera embedded on a raspberry.
     After some research on google, you'll find some already labeled dataset like this :
     
-    ![EyeImage](https://www.kaggleusercontent.com/kf/61507157/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..rX7jZd9z39lSiyXG0mDVBQ.A9jkHT6G4f-_unDjNZPLrTxn4laI373iRkZKCKe3Aja3wZs2qp7lTAPazE3CWwlsXVj4bvfGStcJ_XyKB4-f7dKTxaFKz1Sr1GxXORk-K8zT3xoRZ0huHJFdDRcyU_-XCAfVkAl-rgjzx4_FWIt8X_7UviSzzZwEwx2OtHl11EmKPhSm3BGkgf4-6hIVhXV4JNn1w2JlpAlYlrSxGpqZOL_4MjNsiGDMmuhgHqECpdujCex59Ym_mCB0XpC76ulHZ2rYgeIrsRl-xXiwRUl8mt_Mt2OnwQBZnTg-94HcPZitziZ8uBXhxTDLbaraXQMmh7SB1vJnpjlJUrHT08jgpOCX6t6lscv4XJpQ1TDV0u_f6AHOh2SjkbJeOqI4LOmnN9wwhh9HM9n_W4aCqTZRq5ozBCXmd12VBMDehnlCK186cY1xDgWEJTgdrCB3sksD6Wuwcwgho18g5EFhtxnUDn1n-iyGaKzJcp8BNPWPu6nEv_mr-D0I0krOFm5FoZehFYu6SBKqfiuwseoTcND9CvwLQFrhPKzphjZNyB0N-HtaZytO2ZpX4n-cOFH63K4BZ-HoLX4vevzWwoqkERwGGI363O56VmcGrrXZrk6W4PsBvF5dj5XcY0pO6lqYbYx_igJRxfnPhTuVMO3XRUzDQZZ6fmXC9u8zvErWdwaobcARzxYDXI70SzcNWZZ-0a-dUdWsoSBnpZASqJEiJ1kJpQ.7FkCLL6hOw219IfZiH6FoQ/__results___files/__results___11_0.png)
+    ![EyeImage](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.fineartamerica.com%2Fimages-medium-large-5%2Fophthalmoscopy-of-disc-cupping-in-glaucoma-patient-sue-fordscience-photo-library.jpg&f=1&nofb=1&ipt=2f920d45b6afb7913317ea8e19a4d9662bef465f28419af01c80feeca200080d&ipo=images)
     
     <br>
     <br>

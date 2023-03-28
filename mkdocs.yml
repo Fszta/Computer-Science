@@ -1,5 +1,5 @@
 site_name: Computer science
-repo_url: https://github.com/squidfunk/mkdocs-material
+
 theme:
   name: material
   

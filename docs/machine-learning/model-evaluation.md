@@ -32,6 +32,44 @@ and make informed decisions about how to improve the model. By dividing the data
 and test sets, we can ensure that the model is not overfitting or underfitting and that it can generalize well to new,
 unseen data.
 
+### Cross-validation
+!!! question "What is cross validation ?"
+    
+    Cross-validation is a technique used to evaluate the performance of a machine learning model on a limited dataset by 
+    splitting the data into multiple subsets, training the model on some subsets, and evaluating its performance on the 
+    remaining subsets.
+
+
+
+The basic idea behind cross-validation is to ensure that the model is not overfitting the data and can generalize well 
+to new data. It does this by simulating the process of testing the model on new data that it has not seen before.
+
+The most common form of cross-validation is k-fold cross-validation, where the data is divided into k equal-sized 
+subsets, or folds. The algorithm is then trained on k-1 folds and tested on the remaining fold. This process is 
+repeated k times, with each fold used exactly once as the testing data. The results from each fold are then averaged 
+to obtain an estimate of the model's performance.
+
+For example, in 5-fold cross-validation, the dataset would be split into five equal parts, with four parts used 
+for training and one part used for testing. This process is repeated five times, with each of the five parts used as
+the testing data once. The average of the results from the five rounds is then used as an estimate of the model's 
+performance.
+
+![img_1.png](assets/img_4.png)
+
+One of the advantages of cross-validation is that it can provide a more accurate estimate of a model's performance 
+than a single train-test split. This is because the results are averaged over multiple rounds, reducing the variability
+of the estimate. It can also help to detect overfitting, as a model that overfits the training data will perform poorly
+on the testing data.
+
+!!! warning 
+
+    Cross-validation can also be computationally expensive, as it requires training and evaluating the model 
+    multiple times. It may also be less appropriate for some datasets, such as those with highly imbalanced classes or 
+    temporal dependencies.
+
+Overall, cross-validation is a powerful tool for evaluating the performance of a machine learning model and can help to
+improve the accuracy and generalization of the model.
+
 
 
 ## Classification

@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../logistic-regression/">
+        <link rel="prev" href="../decision_tree/">
       
       
-        <link rel="next" href="../prerequisites/">
+        <link rel="next" href="../intro/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
-        <title>Model evaluation - Computer science</title>
+        <title>Exercise - Computer science</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#model-evaluation" class="md-skip">
+        <a href="#exercise" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Model evaluation
+              Exercise
             
           </span>
         </div>
@@ -323,11 +323,174 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../exercice/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercise
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Exercise
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#human-stress-classification-in-and-through-sleep" class="md-nav__link">
+    Human stress classification in and through sleep
+  </a>
+  
+    <nav class="md-nav" aria-label="Human stress classification in and through sleep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-data" class="md-nav__link">
+    Input data
+  </a>
+  
+    <nav class="md-nav" aria-label="Input data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-download-the-dataset-here-httpswetlt-3hhibkn0gv" class="md-nav__link">
+    You can download the dataset here : https://we.tl/t-3hhIBKN0GV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tooling" class="md-nav__link">
+    Tooling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-data-exploration" class="md-nav__link">
+    1 - Data exploration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-preprocessing" class="md-nav__link">
+    2 - Data preprocessing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-knn-model-training" class="md-nav__link">
+    3 - KNN model training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-knn-model-evaluation" class="md-nav__link">
+    4 - KNN Model evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-decision-tree-model-training" class="md-nav__link">
+    5 - Decision tree model training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-decision-tree-model-evaluation" class="md-nav__link">
+    6 - Decision tree model evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-compare-results" class="md-nav__link">
+    7 - Compare results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus-compare-with-other-algorithms" class="md-nav__link">
+    Bonus - Compare with other Algorithms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-send-your-work" class="md-nav__link">
+    8 - Send your work
+  </a>
+  
+    <nav class="md-nav" aria-label="8 - Send your work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thanks-for-the-dataset" class="md-nav__link">
+    Thanks for the dataset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -393,100 +556,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Model evaluation
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../model-evaluation/" class="md-nav__link">
         Model evaluation
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#splitting-our-data-for-training-testing-and-validation" class="md-nav__link">
-    Splitting our data for training, testing, and validation
-  </a>
-  
-    <nav class="md-nav" aria-label="Splitting our data for training, testing, and validation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-training-set" class="md-nav__link">
-    The training set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-validation-set" class="md-nav__link">
-    The validation set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-test-set" class="md-nav__link">
-    The test set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cross-validation" class="md-nav__link">
-    Cross-validation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classification" class="md-nav__link">
-    Classification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regression" class="md-nav__link">
-    Regression
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -644,38 +718,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#splitting-our-data-for-training-testing-and-validation" class="md-nav__link">
-    Splitting our data for training, testing, and validation
+  <a href="#human-stress-classification-in-and-through-sleep" class="md-nav__link">
+    Human stress classification in and through sleep
   </a>
   
-    <nav class="md-nav" aria-label="Splitting our data for training, testing, and validation">
+    <nav class="md-nav" aria-label="Human stress classification in and through sleep">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-training-set" class="md-nav__link">
-    The training set
+  <a href="#input-data" class="md-nav__link">
+    Input data
+  </a>
+  
+    <nav class="md-nav" aria-label="Input data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-download-the-dataset-here-httpswetlt-3hhibkn0gv" class="md-nav__link">
+    You can download the dataset here : https://we.tl/t-3hhIBKN0GV
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#the-validation-set" class="md-nav__link">
-    The validation set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-test-set" class="md-nav__link">
-    The test set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cross-validation" class="md-nav__link">
-    Cross-validation
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -685,16 +751,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#classification" class="md-nav__link">
-    Classification
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tooling" class="md-nav__link">
+    Tooling
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#regression" class="md-nav__link">
-    Regression
+        
+          <li class="md-nav__item">
+  <a href="#1-data-exploration" class="md-nav__link">
+    1 - Data exploration
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-data-preprocessing" class="md-nav__link">
+    2 - Data preprocessing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-knn-model-training" class="md-nav__link">
+    3 - KNN model training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-knn-model-evaluation" class="md-nav__link">
+    4 - KNN Model evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-decision-tree-model-training" class="md-nav__link">
+    5 - Decision tree model training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-decision-tree-model-evaluation" class="md-nav__link">
+    6 - Decision tree model evaluation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-compare-results" class="md-nav__link">
+    7 - Compare results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus-compare-with-other-algorithms" class="md-nav__link">
+    Bonus - Compare with other Algorithms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-send-your-work" class="md-nav__link">
+    8 - Send your work
+  </a>
+  
+    <nav class="md-nav" aria-label="8 - Send your work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thanks-for-the-dataset" class="md-nav__link">
+    Thanks for the dataset
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -713,158 +861,153 @@
                   
 
 
-<h1 id="model-evaluation">Model evaluation</h1>
-<h2 id="splitting-our-data-for-training-testing-and-validation">Splitting our data for training, testing, and validation</h2>
-<p><img alt="img.png" src="../assets/img_4.png" /></p>
+<h1 id="exercise">Exercise</h1>
+<h2 id="human-stress-classification-in-and-through-sleep">Human stress classification in and through sleep</h2>
+<div class="admonition note">
+<p class="admonition-title">Goal</p>
+<p>The goal of the exercise is to build a model to classify the stress level of a patient given some physiological data.
+Four levels of stress are defined in the column <code>stress_level</code> as follow : </p>
+<ul>
+<li>0 - low/normal</li>
+<li>1 – medium low</li>
+<li>2 - medium</li>
+<li>3 - medium high</li>
+<li>4 - high</li>
+</ul>
+<p><strong>It's a multiclass classification problem</strong> </p>
+</div>
+<h3 id="input-data">Input data</h3>
+<p>Here is an example of the data you'll use for the exercise.</p>
+<blockquote>
+<p>The dataset is composed of 631 samples</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>snoring_range</th>
+<th>respiration_rate</th>
+<th>body_temperature</th>
+<th>limb_movement_rate</th>
+<th>blood_oxygen_levels</th>
+<th>rapid_eye_movement</th>
+<th>hour_of_sleep</th>
+<th>heart_rate</th>
+<th>stress_level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>93.8</td>
+<td>25.68</td>
+<td>91.84</td>
+<td>16.6</td>
+<td>89.84</td>
+<td>99.6</td>
+<td>1.84</td>
+<td>74.2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>91.64</td>
+<td>25.104</td>
+<td>91.552</td>
+<td>15.88</td>
+<td>89.552</td>
+<td>98.88</td>
+<td>1.552</td>
+<td>72.76</td>
+<td>3</td>
+</tr>
+<tr>
+<td>60</td>
+<td>20</td>
+<td>96</td>
+<td>10</td>
+<td>95</td>
+<td>85</td>
+<td>7</td>
+<td>60</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="you-can-download-the-dataset-here-httpswetlt-3hhibkn0gv">You can download the dataset here : https://we.tl/t-3hhIBKN0GV</h4>
+<h2 id="instructions">Instructions</h2>
+<h3 id="tooling">Tooling</h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Train-test-validation is a common approach used in machine learning to evaluate the performance of a model. 
-The approach involves dividing a dataset into three parts: a training set, a validation set, and a test set.</p>
+<p>You can use any library, any tool, it's up to you. Here are some ideas :</p>
+<ul>
+<li>pandas for data manipulation</li>
+<li>matplotlib / seaborn for data visualization</li>
+<li>sklearn : contains all the ML models and many functions you'll need</li>
+<li>Jupyter / GoogleCollab</li>
+</ul>
 </div>
-<h3 id="the-training-set">The training set</h3>
-<p>It is the portion of the dataset used to train the model. The model learns from the patterns and 
-relationships present in the training data and uses this knowledge to make predictions on new, unseen data.</p>
-<h3 id="the-validation-set">The validation set</h3>
-<p>It is used to evaluate the performance of the model during training. 
-As the model learns from the training data, its performance is evaluated on the validation set to assess whether 
-it is overfitting (i.e., memorizing the training data and performing poorly on new data) or underfitting 
-(i.e., not capturing the patterns and relationships present in the training data).</p>
-<h3 id="the-test-set">The test set</h3>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>You can think about the test set as <code>unseen data</code></p>
+<h3 id="1-data-exploration">1 - Data exploration</h3>
+<ul>
+<li>First, load the heart rate data into a Pandas DataFrame (in Python) on GoogleColab or in a Jupyter notebook.</li>
+<li>Check for any missing or null values in the dataset and handle them appropriately.</li>
+<li>Visualize the distribution of each feature (i.e., snoring_range, respiration_rate, body_temperature, 
+limb_movement_rate, blood_oxygen_levels, rapid_eye_movement, hour_of_sleep, heart_rate) 
+using histograms or density plots to get a sense of the range and distribution of each variable.</li>
+<li>Examine the correlation between the features and the target variable (i.e., stress_level) to identify any highly correlated features.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Feel free to add any visualization that make sense, be creative !</p>
 </div>
-<p>It is used to evaluate the performance of the model after it has been trained and tuned on the training and 
-validation sets. The test set provides an unbiased estimate of the model's performance on new, unseen data.</p>
-<p>The train-test-validation approach is important because it enables us to assess the quality of the model's predictions
-and make informed decisions about how to improve the model. By dividing the dataset into separate training, validation,
-and test sets, we can ensure that the model is not overfitting or underfitting and that it can generalize well to new,
-unseen data.</p>
-<h3 id="cross-validation">Cross-validation</h3>
-<div class="admonition question">
-<p class="admonition-title">What is cross validation ?</p>
-<p>Cross-validation is a technique used to evaluate the performance of a machine learning model on a limited dataset by 
-splitting the data into multiple subsets, training the model on some subsets, and evaluating its performance on the 
-remaining subsets.</p>
+<h3 id="2-data-preprocessing">2 - Data preprocessing</h3>
+<ul>
+<li>Split the data into training and testing datasets (e.g., 80% training and 20% testing).</li>
+<li>Scale the features to a similar range to avoid bias in distance calculations. You can use a method like 
+min-max scaling or standard scaling. (You can try without !)</li>
+</ul>
+<h3 id="3-knn-model-training">3 - KNN model training</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Have a look to <code>sklearn.neighbors.KNeighborsClassifier</code>...</p>
 </div>
-<p>The basic idea behind cross-validation is to ensure that the model is not overfitting the data and can generalize well 
-to new data. It does this by simulating the process of testing the model on new data that it has not seen before.</p>
-<p>The most common form of cross-validation is k-fold cross-validation, where the data is divided into k equal-sized 
-subsets, or folds. The algorithm is then trained on k-1 folds and tested on the remaining fold. This process is 
-repeated k times, with each fold used exactly once as the testing data. The results from each fold are then averaged 
-to obtain an estimate of the model's performance.</p>
-<p>For example, in 5-fold cross-validation, the dataset would be split into five equal parts, with four parts used 
-for training and one part used for testing. This process is repeated five times, with each of the five parts used as
-the testing data once. The average of the results from the five rounds is then used as an estimate of the model's 
-performance.</p>
-<p><img alt="img_1.png" src="../assets/img_4.png" /></p>
-<p>One of the advantages of cross-validation is that it can provide a more accurate estimate of a model's performance 
-than a single train-test split. This is because the results are averaged over multiple rounds, reducing the variability
-of the estimate. It can also help to detect overfitting, as a model that overfits the training data will perform poorly
-on the testing data.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Cross-validation can also be computationally expensive, as it requires training and evaluating the model 
-multiple times. It may also be less appropriate for some datasets, such as those with highly imbalanced classes or 
-temporal dependencies.</p>
+<ul>
+<li>Use scikit-learn's KNeighborsClassifier to train a KNN model on the heart rate data.</li>
+<li>Choose an appropriate value of k (i.e., the number of nearest neighbors to consider) by trying different values and 
+evaluating the performance of the model using a validation dataset or cross-validation.</li>
+<li>Fit the model on the training dataset.</li>
+</ul>
+<h3 id="4-knn-model-evaluation">4 - KNN Model evaluation</h3>
+<ul>
+<li>Evaluate the performance of the KNN model on the test dataset using metrics such as accuracy, precision, recall, F1-score, and ROC-AUC score.</li>
+<li>Visualize the model's performance using a confusion matrix or ROC curve.</li>
+<li>Analyze the results and identify areas of improvement for the model.</li>
+</ul>
+<h3 id="5-decision-tree-model-training">5 - Decision tree model training</h3>
+<p>same as <code>3 - KNN model training</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Have a look to <code>sklearn.tree.DecisionTreeClassifier</code>...</p>
 </div>
-<p>Overall, cross-validation is a powerful tool for evaluating the performance of a machine learning model and can help to
-improve the accuracy and generalization of the model.</p>
-<h2 id="classification">Classification</h2>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>In general we use a confusion matrix to visualize the error made by an algorithm in a classification problem
-it's not limited to binary classification.</p>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">Actual Positive</th>
-<th align="center">Actual Negative</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Predicted Positive</td>
-<td align="center">TP</td>
-<td align="center">FP</td>
-</tr>
-<tr>
-<td align="center">Predicted Negative</td>
-<td align="center">FN</td>
-<td align="center">TN</td>
-</tr>
-</tbody>
-</table>
+<h3 id="6-decision-tree-model-evaluation">6 - Decision tree model evaluation</h3>
+<p>same as <code>4 - KNN Model evaluation</code></p>
+<h3 id="7-compare-results">7 - Compare results</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Just choose one of the model, justify your choice ! </p>
 </div>
-<table>
-<thead>
-<tr>
-<th align="center">Evaluation Metric</th>
-<th align="center">Formula</th>
-<th align="center">When to Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Accuracy</td>
-<td align="center">(TP + TN) / (TP + TN + FP + FN)</td>
-<td align="center">Balanced</td>
-</tr>
-<tr>
-<td align="center">Precision</td>
-<td align="center">TP / (TP + FP)</td>
-<td align="center">Imbalanced</td>
-</tr>
-<tr>
-<td align="center">Recall</td>
-<td align="center">TP / (TP + FN)</td>
-<td align="center">Imbalanced</td>
-</tr>
-<tr>
-<td align="center">F1 Score</td>
-<td align="center">2 * (Precision * Recall) / (Precision + Recall)</td>
-<td align="center">Imbalanced</td>
-</tr>
-</tbody>
-</table>
-<h2 id="regression">Regression</h2>
-<table>
-<thead>
-<tr>
-<th align="center">Evaluation Metric</th>
-<th align="center">Formula</th>
-<th align="center">When to Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Mean Squared Error (MSE)</td>
-<td align="center">1/n * ∑(y_true - y_pred)^2</td>
-<td align="center">General</td>
-</tr>
-<tr>
-<td align="center">Root Mean Squared Error (RMSE)</td>
-<td align="center">√(1/n * ∑(y_true - y_pred)^2)</td>
-<td align="center">General</td>
-</tr>
-<tr>
-<td align="center">R-squared (R2)</td>
-<td align="center">1 - ∑(y_true - y_pred)^2 / ∑(y_true - y_true_mean)^2</td>
-<td align="center">General</td>
-</tr>
-<tr>
-<td align="center">MAE (Mean Absolute Error)</td>
-<td align="center">1/n * ∑                        (      y_true - y_pred )</td>
-<td align="center">General</td>
-</tr>
-<tr>
-<td align="center">MAPE (Mean Absolute Percentage Error)</td>
-<td align="center">100% * 1/n * ∑( y_true - y_pred) / y_true</td>
-<td align="center">Specific</td>
-</tr>
-</tbody>
-</table>
+<h3 id="bonus-compare-with-other-algorithms">Bonus - Compare with other Algorithms</h3>
+<h3 id="8-send-your-work">8 - Send your work</h3>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Your work (the notebook), must be shared in a github repository, you'll send the link to your repo by email.</p>
+</div>
+<h4 id="thanks-for-the-dataset">Thanks for the dataset</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>L. Rachakonda, A. K. Bapatla, S. P. Mohanty, and E. Kougianos, “SaYoPillow: Blockchain-Integrated Privacy-Assured IoMT 
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Framework for Stress Management Considering Sleeping Habits”, IEEE Transactions on Consumer Electronics (TCE), Vol. 67,
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> No. 1, Feb 2021, pp. 20-29.
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>L. Rachakonda, S. P. Mohanty, E. Kougianos, K. Karunakaran, and M. Ganapathiraju, “Smart-Pillow: An IoT based Device 
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>for Stress Detection Considering Sleeping Habits”, in Proceedings of the 4th IEEE International Symposium on Smart 
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Electronic Systems (iSES), 2018, pp. 161--166.
+</span></code></pre></div>
 
 
 

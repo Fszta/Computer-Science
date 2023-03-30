@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../logistic-regression/">
+        <link rel="prev" href="../intro/">
       
       
-        <link rel="next" href="../prerequisites/">
+        <link rel="next" href="../linear-regression/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
-        <title>Model evaluation - Computer science</title>
+        <title>K-Nearest-neighbor (KNN) - Computer science</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#model-evaluation" class="md-skip">
+        <a href="#k-nearest-neighbor-knn" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Model evaluation
+              K-Nearest-neighbor (KNN)
             
           </span>
         </div>
@@ -351,11 +351,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../knn/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          K-Nearest-neighbor (KNN)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         K-Nearest-neighbor (KNN)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#type-of-distance" class="md-nav__link">
+    Type of distance
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -393,100 +434,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Model evaluation
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../model-evaluation/" class="md-nav__link">
         Model evaluation
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#splitting-our-data-for-training-testing-and-validation" class="md-nav__link">
-    Splitting our data for training, testing, and validation
-  </a>
-  
-    <nav class="md-nav" aria-label="Splitting our data for training, testing, and validation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-training-set" class="md-nav__link">
-    The training set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-validation-set" class="md-nav__link">
-    The validation set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-test-set" class="md-nav__link">
-    The test set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cross-validation" class="md-nav__link">
-    Cross-validation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classification" class="md-nav__link">
-    Classification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regression" class="md-nav__link">
-    Regression
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -644,56 +596,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#splitting-our-data-for-training-testing-and-validation" class="md-nav__link">
-    Splitting our data for training, testing, and validation
-  </a>
-  
-    <nav class="md-nav" aria-label="Splitting our data for training, testing, and validation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-training-set" class="md-nav__link">
-    The training set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-validation-set" class="md-nav__link">
-    The validation set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-test-set" class="md-nav__link">
-    The test set
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cross-validation" class="md-nav__link">
-    Cross-validation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classification" class="md-nav__link">
-    Classification
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#regression" class="md-nav__link">
-    Regression
+  <a href="#type-of-distance" class="md-nav__link">
+    Type of distance
   </a>
   
 </li>
@@ -713,155 +617,74 @@
                   
 
 
-<h1 id="model-evaluation">Model evaluation</h1>
-<h2 id="splitting-our-data-for-training-testing-and-validation">Splitting our data for training, testing, and validation</h2>
-<p><img alt="img.png" src="../assets/img_4.png" /></p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Train-test-validation is a common approach used in machine learning to evaluate the performance of a model. 
-The approach involves dividing a dataset into three parts: a training set, a validation set, and a test set.</p>
+<h1 id="k-nearest-neighbor-knn">K-Nearest-neighbor (KNN)</h1>
+<p>K-nearest neighbors is a type of machine learning algorithm that can be used for both <code>regression</code> and <code>classification</code> 
+problems. The algorithm works by finding the <code>K</code> number of training examples that are closest to the new data point, 
+and then using the labels of those examples to make a prediction for the new data point.</p>
+<div class="admonition example">
+<p class="admonition-title">Classification with KNN</p>
+<p><img alt="img_1.png" src="../assets/img_1_knn.png" /></p>
 </div>
-<h3 id="the-training-set">The training set</h3>
-<p>It is the portion of the dataset used to train the model. The model learns from the patterns and 
-relationships present in the training data and uses this knowledge to make predictions on new, unseen data.</p>
-<h3 id="the-validation-set">The validation set</h3>
-<p>It is used to evaluate the performance of the model during training. 
-As the model learns from the training data, its performance is evaluated on the validation set to assess whether 
-it is overfitting (i.e., memorizing the training data and performing poorly on new data) or underfitting 
-(i.e., not capturing the patterns and relationships present in the training data).</p>
-<h3 id="the-test-set">The test set</h3>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>You can think about the test set as <code>unseen data</code></p>
-</div>
-<p>It is used to evaluate the performance of the model after it has been trained and tuned on the training and 
-validation sets. The test set provides an unbiased estimate of the model's performance on new, unseen data.</p>
-<p>The train-test-validation approach is important because it enables us to assess the quality of the model's predictions
-and make informed decisions about how to improve the model. By dividing the dataset into separate training, validation,
-and test sets, we can ensure that the model is not overfitting or underfitting and that it can generalize well to new,
-unseen data.</p>
-<h3 id="cross-validation">Cross-validation</h3>
 <div class="admonition question">
-<p class="admonition-title">What is cross validation ?</p>
-<p>Cross-validation is a technique used to evaluate the performance of a machine learning model on a limited dataset by 
-splitting the data into multiple subsets, training the model on some subsets, and evaluating its performance on the 
-remaining subsets.</p>
+<p class="admonition-title">What is "K" ?</p>
 </div>
-<p>The basic idea behind cross-validation is to ensure that the model is not overfitting the data and can generalize well 
-to new data. It does this by simulating the process of testing the model on new data that it has not seen before.</p>
-<p>The most common form of cross-validation is k-fold cross-validation, where the data is divided into k equal-sized 
-subsets, or folds. The algorithm is then trained on k-1 folds and tested on the remaining fold. This process is 
-repeated k times, with each fold used exactly once as the testing data. The results from each fold are then averaged 
-to obtain an estimate of the model's performance.</p>
-<p>For example, in 5-fold cross-validation, the dataset would be split into five equal parts, with four parts used 
-for training and one part used for testing. This process is repeated five times, with each of the five parts used as
-the testing data once. The average of the results from the five rounds is then used as an estimate of the model's 
-performance.</p>
-<p><img alt="img_1.png" src="../assets/img_4.png" /></p>
-<p>One of the advantages of cross-validation is that it can provide a more accurate estimate of a model's performance 
-than a single train-test split. This is because the results are averaged over multiple rounds, reducing the variability
-of the estimate. It can also help to detect overfitting, as a model that overfits the training data will perform poorly
-on the testing data.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Cross-validation can also be computationally expensive, as it requires training and evaluating the model 
-multiple times. It may also be less appropriate for some datasets, such as those with highly imbalanced classes or 
-temporal dependencies.</p>
+<p>The "K" in K-nearest neighbors refers to the number of neighbors that the algorithm uses to make its prediction. 
+For example, if K=3, then the algorithm will find the three training examples that are closest to the new data point,
+and use the labels of those examples to predict the label of the new data point.</p>
+<div class="admonition question">
+<p class="admonition-title">How does KNN works?</p>
 </div>
-<p>Overall, cross-validation is a powerful tool for evaluating the performance of a machine learning model and can help to
-improve the accuracy and generalization of the model.</p>
-<h2 id="classification">Classification</h2>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>In general we use a confusion matrix to visualize the error made by an algorithm in a classification problem
-it's not limited to binary classification.</p>
+<p>The algorithm determines which training examples are closest to the new data point by calculating the distance between 
+the new data point and each of the training examples in the feature space. The most common distance metric used is 
+<code>Euclidean distance</code>, but other distance metrics can be used as well.</p>
+<p>Once the K nearest neighbors have been identified, the algorithm will use those neighbors to make a prediction for the 
+new data point. If the problem is a classification problem, the algorithm will use the mode (most common) label of the 
+K neighbors as the predicted label for the new data point. If the problem is a regression problem, the algorithm will 
+use the mean or median of the K neighbors as the predicted value for the new data point.</p>
+<div class="admonition question">
+<p class="admonition-title">Is the value of K important ?</p>
+</div>
+<p>It's worth noting that the choice of K can have a significant impact on the performance of the algorithm. A small value 
+of K (e.g., K=1) can lead to overfitting, where the algorithm memorizes the training data and doesn't generalize
+well to new data. A large value of K (e.g., K=n, where n is the number of training examples) can lead to underfitting,
+where the algorithm doesn't capture the underlying structure of the data.</p>
+<p>Overall, K-nearest neighbors is a simple and effective machine learning algorithm that can be used for a variety of 
+problems. However, it can be sensitive to the choice of distance metric and the value of K, and may not perform as well 
+as other more sophisticated algorithms for certain types of data.</p>
+<h2 id="type-of-distance">Type of distance</h2>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">Actual Positive</th>
-<th align="center">Actual Negative</th>
+<th>Distance Metric</th>
+<th>Formula</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">Predicted Positive</td>
-<td align="center">TP</td>
-<td align="center">FP</td>
+<td>Euclidean distance</td>
+<td><span class="arithmatex">\(\sqrt{\sum_{i=1}^{n}(x_i - y_i)^2}\)</span></td>
+<td>Measures the straight-line distance between two points in a feature space.</td>
 </tr>
 <tr>
-<td align="center">Predicted Negative</td>
-<td align="center">FN</td>
-<td align="center">TN</td>
-</tr>
-</tbody>
-</table>
-</div>
-<table>
-<thead>
-<tr>
-<th align="center">Evaluation Metric</th>
-<th align="center">Formula</th>
-<th align="center">When to Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Accuracy</td>
-<td align="center">(TP + TN) / (TP + TN + FP + FN)</td>
-<td align="center">Balanced</td>
+<td>Manhattan distance</td>
+<td><span class="arithmatex">\(\sum_{i=1}^{n}\lvert x_i - y_i \rvert\)</span></td>
+<td>Measures the sum of the absolute differences between the coordinates of two points in a feature space.</td>
 </tr>
 <tr>
-<td align="center">Precision</td>
-<td align="center">TP / (TP + FP)</td>
-<td align="center">Imbalanced</td>
+<td>Minkowski distance (p=3)</td>
+<td><span class="arithmatex">\(\sqrt[3]{\sum_{i=1}^{n}(x_i - y_i)^3}\)</span></td>
+<td>A generalization of both Euclidean distance and Manhattan distance that can be used for any value of p.</td>
 </tr>
 <tr>
-<td align="center">Recall</td>
-<td align="center">TP / (TP + FN)</td>
-<td align="center">Imbalanced</td>
+<td>Cosine similarity</td>
+<td><span class="arithmatex">\(\frac{\sum_{i=1}^{n}(x_i \times y_i)}{\sqrt{\sum_{i=1}^{n}x_i^2} \times \sqrt{\sum_{i=1}^{n}y_i^2}}\)</span></td>
+<td>Measures the cosine of the angle between two vectors in a feature space, which is commonly used for text classification and recommendation systems.</td>
 </tr>
 <tr>
-<td align="center">F1 Score</td>
-<td align="center">2 * (Precision * Recall) / (Precision + Recall)</td>
-<td align="center">Imbalanced</td>
-</tr>
-</tbody>
-</table>
-<h2 id="regression">Regression</h2>
-<table>
-<thead>
-<tr>
-<th align="center">Evaluation Metric</th>
-<th align="center">Formula</th>
-<th align="center">When to Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">Mean Squared Error (MSE)</td>
-<td align="center">1/n * ∑(y_true - y_pred)^2</td>
-<td align="center">General</td>
-</tr>
-<tr>
-<td align="center">Root Mean Squared Error (RMSE)</td>
-<td align="center">√(1/n * ∑(y_true - y_pred)^2)</td>
-<td align="center">General</td>
-</tr>
-<tr>
-<td align="center">R-squared (R2)</td>
-<td align="center">1 - ∑(y_true - y_pred)^2 / ∑(y_true - y_true_mean)^2</td>
-<td align="center">General</td>
-</tr>
-<tr>
-<td align="center">MAE (Mean Absolute Error)</td>
-<td align="center">1/n * ∑                        (      y_true - y_pred )</td>
-<td align="center">General</td>
-</tr>
-<tr>
-<td align="center">MAPE (Mean Absolute Percentage Error)</td>
-<td align="center">100% * 1/n * ∑( y_true - y_pred) / y_true</td>
-<td align="center">Specific</td>
+<td>Hamming distance</td>
+<td><span class="arithmatex">\(\sum_{i=1}^{n}[x_i \neq y_i]\)</span></td>
+<td>Measures the number of positions at which two binary strings differ, which is commonly used for string matching and error correction.</td>
 </tr>
 </tbody>
 </table>

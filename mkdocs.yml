@@ -50,3 +50,25 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
+nav:
+  - Home: index.md
+  - Sorting Algorithm:
+    - Bubble sort: sorting-algorithm/bubble-sort.md
+    - Insertion sort: sorting-algorithm/insertion-sort.md
+    - Selection sort: sorting-algorithm/selection-sort.md
+
+  - Machine learning:
+      - General notion:
+        - Introduction: machine-learning/intro.md
+        - Before developing: machine-learning/prerequisites.md
+        - Model evaluation: machine-learning/model-evaluation.md
+        - Tooling: machine-learning/tooling.md
+        - Additional resources: machine-learning/resources.md
+      - Algorithm:
+          - Linear regression: machine-learning/linear-regression.md
+          - Logistic regression: machine-learning/logistic-regression.md
+          - K Nearest neighbor: machine-learning/knn.md
+          - Decision tree: machine-learning/decision_tree.md
+      - Practice:
+          - Exercise: machine-learning/exercice.md
+

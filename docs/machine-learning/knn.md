@@ -7,7 +7,7 @@ and then using the labels of those examples to make a prediction for the new dat
 
 !!! example "Classification with KNN"
 
-    ![img_5.png](assets/img_5.png)
+    ![img_1.png](assets/img_1_knn.png)
 
 
 !!! question "What is "K" ?"

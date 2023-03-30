@@ -54,7 +54,7 @@ for training and one part used for testing. This process is repeated five times,
 the testing data once. The average of the results from the five rounds is then used as an estimate of the model's 
 performance.
 
-![img_1.png](assets/img_4.png)
+![img_5.png](assets/img_5.png)
 
 One of the advantages of cross-validation is that it can provide a more accurate estimate of a model's performance 
 than a single train-test split. This is because the results are averaged over multiple rounds, reducing the variability

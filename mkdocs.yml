@@ -64,11 +64,15 @@ nav:
         - Model evaluation: machine-learning/model-evaluation.md
         - Tooling: machine-learning/tooling.md
         - Additional resources: machine-learning/resources.md
+        - Parameter tuning: machine-learning/parameter-tuning.md
+        - Code snippets : machine-learning/snippets.md
       - Algorithm:
           - Linear regression: machine-learning/linear-regression.md
           - Logistic regression: machine-learning/logistic-regression.md
           - K Nearest neighbor: machine-learning/knn.md
           - Decision tree: machine-learning/decision_tree.md
+          - SVM : machine-learning/svm.md
       - Practice:
           - Exercise: machine-learning/exercice.md
+          - Exercise 2: machine-learning/exercise-2.md
 

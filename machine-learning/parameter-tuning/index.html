@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../linear-regression/">
+        <link rel="prev" href="../resources/">
       
       
-        <link rel="next" href="../knn/">
+        <link rel="next" href="../snippets/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Logistic regression - Computer science</title>
+        <title>Parameter tuning - Computer science</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#logistic-regression" class="md-skip">
+        <a href="#parameter-tuning" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logistic regression
+              Parameter tuning
             
           </span>
         </div>
@@ -393,14 +393,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
       
       
       
@@ -409,7 +411,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
           General notion
@@ -490,11 +492,132 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../parameter-tuning/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Parameter tuning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Parameter tuning
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-parameter-tuning-and-why-it-is-important" class="md-nav__link">
+    What is parameter tuning and why it is important?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-apply-it" class="md-nav__link">
+    How to apply it ?
+  </a>
+  
+    <nav class="md-nav" aria-label="How to apply it ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gridsearch" class="md-nav__link">
+    GridSearch
+  </a>
+  
+    <nav class="md-nav" aria-label="GridSearch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-with-knn" class="md-nav__link">
+    Example with KNN
+  </a>
+  
+    <nav class="md-nav" aria-label="Example with KNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-stupid-way" class="md-nav__link">
+    The stupid way
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-best-way-with-gridsearchcv-class" class="md-nav__link">
+    The best way - With GridSearchCV class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomsearch" class="md-nav__link">
+    RandomSearch
+  </a>
+  
+    <nav class="md-nav" aria-label="RandomSearch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-methods" class="md-nav__link">
+    Other methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -525,16 +648,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
       
       
       
@@ -543,7 +664,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_2">
           <span class="md-nav__icon md-icon"></span>
           Algorithm
@@ -568,72 +689,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Logistic regression
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../logistic-regression/" class="md-nav__link">
         Logistic regression
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-iris-dataset-example" class="md-nav__link">
-    The iris dataset example
-  </a>
-  
-    <nav class="md-nav" aria-label="The iris dataset example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#lets-deep-dive-a-bit-in-the-data" class="md-nav__link">
-    Let's deep dive a bit in the data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#now-lets-solve-this-classification-problem-with-the-logistic-regression" class="md-nav__link">
-    Now let's solve this classification problem with the Logistic Regression
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -783,23 +843,83 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-iris-dataset-example" class="md-nav__link">
-    The iris dataset example
+  <a href="#what-is-parameter-tuning-and-why-it-is-important" class="md-nav__link">
+    What is parameter tuning and why it is important?
   </a>
   
-    <nav class="md-nav" aria-label="The iris dataset example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-apply-it" class="md-nav__link">
+    How to apply it ?
+  </a>
+  
+    <nav class="md-nav" aria-label="How to apply it ?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#lets-deep-dive-a-bit-in-the-data" class="md-nav__link">
-    Let's deep dive a bit in the data
+  <a href="#gridsearch" class="md-nav__link">
+    GridSearch
+  </a>
+  
+    <nav class="md-nav" aria-label="GridSearch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-with-knn" class="md-nav__link">
+    Example with KNN
+  </a>
+  
+    <nav class="md-nav" aria-label="Example with KNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-stupid-way" class="md-nav__link">
+    The stupid way
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#now-lets-solve-this-classification-problem-with-the-logistic-regression" class="md-nav__link">
-    Now let's solve this classification problem with the Logistic Regression
+  <a href="#the-best-way-with-gridsearchcv-class" class="md-nav__link">
+    The best way - With GridSearchCV class
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randomsearch" class="md-nav__link">
+    RandomSearch
+  </a>
+  
+    <nav class="md-nav" aria-label="RandomSearch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-methods" class="md-nav__link">
+    Other methods
   </a>
   
 </li>
@@ -824,71 +944,122 @@
                   
 
 
-<h1 id="logistic-regression">Logistic regression</h1>
-<div class="admonition question">
-<p class="admonition-title">What is a logistic regression</p>
-<p>Logistic regression is a statistical method used for modeling the relationship between a binary dependent variable 
-(also known as the response or outcome variable) and one or more independent variables (also known as predictors 
-or explanatory variables). <strong>The goal of logistic regression is to predict the probability of the binary outcome 
-based on the values of the predictors</strong>.</p>
-</div>
-<p>The dependent variable in logistic regression is typically binary (e.g., yes/no, 1/0, success/failure), although it can also be ordinal or nominal. The independent variables can be continuous, categorical, or a combination of both.</p>
-<p>The logistic regression model estimates the log odds (logit) of the binary outcome as a linear combination of the independent variables. The logit is then transformed into a probability using the logistic function, which produces a value between 0 and 1. This probability represents the predicted likelihood of the binary outcome given the values of the independent variables.</p>
-<p>Logistic regression is often used in classification tasks, such as predicting whether a customer will churn or not, whether an email is spam or not, or whether a patient will respond to a particular treatment or not. It can also be used for understanding the relationship between variables and exploring the effects of different factors on the binary outcome.</p>
-<div class="admonition info">
-<p class="admonition-title">The math behind</p>
-<p>The mathematical foundation of logistic regression is based on the logistic function, which is a type of sigmoid 
-function. The logistic function is defined as:</p>
-<div class="arithmatex">\[f(z) = 1 / (1 + e^-z)\]</div>
-<p>where z is the linear combination of the independent variables and their associated coefficients, or weights.
-In other words, z = b0 + b1x1 + b2x2 + ... + bpxp, where b0 is the intercept or constant term and b1 to bp are the
-coefficients for the independent variables x1 to xp.</p>
-</div>
-<h2 id="the-iris-dataset-example">The iris dataset example</h2>
-<p>The iris dataset is often used for educational purpose in machine learning. 
-It contains the following informations : </p>
-<table>
-<thead>
-<tr>
-<th align="center">Column</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">sepal_length</td>
-<td align="center">Length of sepal (in centimeters)</td>
-</tr>
-<tr>
-<td align="center">sepal_width</td>
-<td align="center">Width of sepal (in centimeters)</td>
-</tr>
-<tr>
-<td align="center">petal_length</td>
-<td align="center">Length of petal (in centimeters)</td>
-</tr>
-<tr>
-<td align="center">petal_width</td>
-<td align="center">Width of petal (in centimeters)</td>
-</tr>
-<tr>
-<td align="center">species</td>
-<td align="center">The species of iris (Setosa, Versicolor, or Virginica)</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tips">
-<p class="admonition-title">Objective</p>
-<p>Given the four feature sepal_length, sepal_width, petal_length, petal_width, we want to build a model which is able 
-to predict the class (which species) based on new samples -&gt; It's a multi class classification problem</p>
-</div>
-<h3 id="lets-deep-dive-a-bit-in-the-data">Let's deep dive a bit in the data</h3>
+<h1 id="parameter-tuning">Parameter tuning</h1>
+<h2 id="what-is-parameter-tuning-and-why-it-is-important">What is parameter tuning and why it is important?</h2>
+<p>Parameter tuning is the process of selecting the optimal values for the parameters of a machine learning model. 
+In most machine learning algorithms, there are various parameters that need to be specified to achieve optimal 
+performance on a particular dataset. These parameters can significantly affect the performance of the model and can 
+vary depending on the problem at hand.</p>
+<h2 id="how-to-apply-it">How to apply it ?</h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The example we will use contains 150 samples</p>
+<p>There are different ways to perform parameter tuning, you can do it 'manually' by iterating over a list
+of parameters (in such a case, it's a gridsearch)</p>
 </div>
-<p><img alt="img.png" src="../assets/img.png" /></p>
-<h3 id="now-lets-solve-this-classification-problem-with-the-logistic-regression">Now let's solve this classification problem with the Logistic Regression</h3>
+<h3 id="gridsearch">GridSearch</h3>
+<p>The grid search approach would involve creating a list of values for each hyperparameter, and then evaluating the 
+performance of the model for all possible combinations of these values. The combination that results in the best 
+performance (e.g., highest accuracy, lowest error rate) is then chosen as the optimal set of hyperparameters.</p>
+<h4 id="example-with-knn">Example with KNN</h4>
+<p>Assuming we want to tune parameters of a KNN classifier. Let's do it with the two following parameters : </p>
+<ul>
+<li><code>n_neighbors</code> the number of neighbors. 
+For this parameter we want to test 3 value : [3, 5, 7]</li>
+<li><code>weights</code> the weight function used in prediction. 
+For this parameter we want to test 2 value : ['uniform', 'distance']</li>
+</ul>
+<h5 id="the-stupid-way">The stupid way</h5>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Never do that way.</p>
+</div>
+<p>The stupid way would be to manually create some classifier with all the combination...</p>
+<ul>
+<li><code>KNeighborsClassifier(n_neighbors=3, weights='uniform')</code> </li>
+<li><code>KNeighborsClassifier(n_neighbors=3, weights='distance')</code> </li>
+<li><code>KNeighborsClassifier(n_neighbors=5, weights='uniform')</code> </li>
+<li><code>KNeighborsClassifier(n_neighbors=5, weights='distance')</code> </li>
+<li><code>KNeighborsClassifier(n_neighbors=7, weights='uniform')</code> </li>
+<li><code>KNeighborsClassifier(n_neighbors=7, weights='distance')</code> </li>
+</ul>
+<h5 id="the-best-way-with-gridsearchcv-class">The best way - With GridSearchCV class</h5>
+<p>A better way would to :</p>
+<ul>
+<li>
+<p>Define a <code>parameter grid</code> as follows :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>              <span class="s1">&#39;weights&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">]}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Define a Knn classifier without parameter:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">knn_classifier</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+</span></code></pre></div></p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Sklearn come with a built-in class <code>GridSearchCV</code>, design to perform parameter tuning and also
+CrossValidation !</p>
+</div>
+<ul>
+<li>Pass the knn classifier and the parameter grid to <code>GridSearchCV()</code> object :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">knn_classifier</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</span></code></pre></div></li>
+<li>You can now train your model !
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span></code></pre></div></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As you can see, with this approach, you will not call the fit method of your knn_classifier object directly
+but on the grid_search object</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">A pseudo example</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Create an instance of KNN classifier</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">knn_classifier</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">()</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Define a grid of hyperparameters to search over</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>              <span class="s1">&#39;weights&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">]}</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># Create a grid search object</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">knn_classifier</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1"># Fit the grid search object to the training data</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best Hyperparameters: &quot;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training Score: &quot;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test Score: &quot;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
+</span></code></pre></div>
+</div>
+<h3 id="randomsearch">RandomSearch</h3>
+<p>Another very similar approach is called <code>RandomSearch</code>. The only difference with <code>GridSearch</code> is that you don't have to
+explicitly pass the values of the parameters, you have to pass the distribution of the parameters, eg : a range for an 
+integer</p>
+<h4 id="example">Example</h4>
+<p>Have a look to GridSearch, this is almost the same. The only changes are the input parameters : 
+this time you pass a parameter_distribution dictionary, like : 
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">param_dist</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;n_neighbors&#39;</span><span class="p">:</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>              <span class="s1">&#39;weights&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;distance&#39;</span><span class="p">]}</span>
+</span></code></pre></div></p>
+<p>And use <code>RandomizedSearchCv</code> class instead of GridSearchCv.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">random_search</span> <span class="o">=</span> <span class="n">RandomizedSearchCV</span><span class="p">(</span><span class="n">knn</span><span class="p">,</span> <span class="n">param_distributions</span><span class="o">=</span><span class="n">param_dist</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</span></code></pre></div></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>RandomizedSearchCV takes an additional parameter n_iter which corresponds to the number of iteration to perform.</p>
+</div>
+<h3 id="other-methods">Other methods</h3>
+<p>The two previous methods are very basics, however they can perform well on classic machine-learning problems. 
+There many other methods to perform parameter tuning. The choice will highly depends on the complexity of the problem
+you are trying to solve. In some cases (when the search space for hyperparameters is large), it's very time-consuming to
+evaluate models on each possibility, in those cases, it's better to use other techniques like <strong>Bayesian Optimization</strong>.</p>
 
 
 

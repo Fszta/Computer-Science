@@ -1,0 +1,1249 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../decision_tree/">
+      
+      
+        <link rel="next" href="../exercice/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>SVM - Computer science</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#svm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Computer science" class="md-header__button md-logo" aria-label="Computer science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Computer science
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SVM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sorting-algorithm/bubble-sort/" class="md-tabs__link">
+        Sorting Algorithm
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../intro/" class="md-tabs__link md-tabs__link--active">
+        Machine learning
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Computer science" class="md-nav__button md-logo" aria-label="Computer science" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Computer science
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Sorting Algorithm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Sorting Algorithm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sorting-algorithm/bubble-sort/" class="md-nav__link">
+        Bubble sort
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sorting-algorithm/insertion-sort/" class="md-nav__link">
+        Insertion sort
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sorting-algorithm/selection-sort/" class="md-nav__link">
+        Selection sort
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Machine learning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Machine learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          General notion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          General notion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prerequisites/" class="md-nav__link">
+        Before developing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-evaluation/" class="md-nav__link">
+        Model evaluation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tooling/" class="md-nav__link">
+        Tooling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        Additional resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameter-tuning/" class="md-nav__link">
+        Parameter tuning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/" class="md-nav__link">
+        Code snippets
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Algorithm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linear-regression/" class="md-nav__link">
+        Linear regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logistic-regression/" class="md-nav__link">
+        Logistic regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../knn/" class="md-nav__link">
+        K Nearest neighbor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decision_tree/" class="md-nav__link">
+        Decision tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SVM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SVM
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    How does it work ?
+  </a>
+  
+    <nav class="md-nav" aria-label="How does it work ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-problems" class="md-nav__link">
+    Linear problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-linear-problems" class="md-nav__link">
+    Non-linear problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-a-dataset-linearly-separable" class="md-nav__link">
+    Making a dataset linearly separable
+  </a>
+  
+    <nav class="md-nav" aria-label="Making a dataset linearly separable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-features" class="md-nav__link">
+    Polynomial features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radial-basis-function" class="md-nav__link">
+    Radial basis function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-kernel" class="md-nav__link">
+    The kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-practice" class="md-nav__link">
+    In practice
+  </a>
+  
+    <nav class="md-nav" aria-label="In practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-importing-the-necessary-modules" class="md-nav__link">
+    Step 1 - Importing the necessary modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-fake-date-you-dont-need-to-remember-this" class="md-nav__link">
+    Step 2 - Create fake date (you don't need to remember this)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-visualize-the-data" class="md-nav__link">
+    Step 3 - Visualize the data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-creating-an-instance-of-svm-classifier-and-fit-it-to-the-data" class="md-nav__link">
+    Step 3 - Creating an instance of SVM Classifier and fit it to the data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-make-prediction-on-new-data" class="md-nav__link">
+    Step 4 - Make prediction on new data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-lets-visualize-our-predictions" class="md-nav__link">
+    Step 5 - Let's visualize our predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    Additional information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Practice
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Practice
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercice/" class="md-nav__link">
+        Exercise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercise-2/" class="md-nav__link">
+        Exercise 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    How does it work ?
+  </a>
+  
+    <nav class="md-nav" aria-label="How does it work ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-problems" class="md-nav__link">
+    Linear problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-linear-problems" class="md-nav__link">
+    Non-linear problems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-a-dataset-linearly-separable" class="md-nav__link">
+    Making a dataset linearly separable
+  </a>
+  
+    <nav class="md-nav" aria-label="Making a dataset linearly separable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polynomial-features" class="md-nav__link">
+    Polynomial features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radial-basis-function" class="md-nav__link">
+    Radial basis function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-kernel" class="md-nav__link">
+    The kernel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-practice" class="md-nav__link">
+    In practice
+  </a>
+  
+    <nav class="md-nav" aria-label="In practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-importing-the-necessary-modules" class="md-nav__link">
+    Step 1 - Importing the necessary modules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-fake-date-you-dont-need-to-remember-this" class="md-nav__link">
+    Step 2 - Create fake date (you don't need to remember this)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-visualize-the-data" class="md-nav__link">
+    Step 3 - Visualize the data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-creating-an-instance-of-svm-classifier-and-fit-it-to-the-data" class="md-nav__link">
+    Step 3 - Creating an instance of SVM Classifier and fit it to the data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-make-prediction-on-new-data" class="md-nav__link">
+    Step 4 - Make prediction on new data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-lets-visualize-our-predictions" class="md-nav__link">
+    Step 5 - Let's visualize our predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    Additional information
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="svm">SVM</h1>
+<p>Support Vector machines (SVMs) are a type of machine learning algorithm used for both classification and regression.</p>
+<p>The basic concept behind SVM is to find the best possible boundary or hyperplane that separates the data points into 
+different classes (for a classification problem).</p>
+<h2 id="how-does-it-work">How does it work ?</h2>
+<h3 id="linear-problems">Linear problems</h3>
+<p>Let's start with an example</p>
+<p>Assuming we've the following data, which represents a two-dimensional binary problem: </p>
+<p><img alt="dataset" src="../assets/img_6.png" /></p>
+<p>It's super easy to draw a hyperplane that separate the data...</p>
+<table>
+<thead>
+<tr>
+<th align="center">A working hyperplane</th>
+<th align="center">A better hyperplane</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="dataset" src="../assets/img_7.png" /></td>
+<td align="center"><img alt="dataset" src="../assets/img_8.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>But how to choose the 'best'? hyperplane</p>
+</div>
+<p>The hyperplane is chosen such that the margin or distance between the hyperplane and the closest 
+data points from each class is maximized.</p>
+<blockquote>
+<p>In a Support Vector Machine algorithm, the margins are the boundaries between the support vectors 
+(the closest points to the decision boundary) and the rest of the data points</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">A working hyperplane</th>
+<th align="center">A better hyperplane</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><img alt="soft-margin" src="../assets/img_10.png" /></td>
+<td align="center"><img alt="hard-margin" src="../assets/img_9.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>When no points are allowed to cross the margins, we are speaking about <code>hard margin classifier</code> (right figure).
+<strong>This only works when the data is linearly separable</strong>, which is not the case in many problems. On the contrary, 
+we are talking about <code>soft margin classifier</code> (left figure).</p>
+<p>Soft margin allows some data points to be misclassified by the hyperplane, but only by a certain amount,
+which is controlled by a parameter called C (in <code>scikit-learn</code>). The larger the value of C, the more strict the margin becomes, meaning
+fewer data points are allowed to be misclassified. Conversely, a smaller value of C allows more misclassified data 
+points but can lead to a larger margin.</p>
+<p>The advantage of soft margin is that it can handle more complex datasets that are not linearly separable. By 
+allowing some margin of error, the SVM algorithm can still find a hyperplane that separates the classes as well as 
+possible. However, the choice of the value of C is important, as it can affect the performance of the algorithm 
+on different datasets.</p>
+<blockquote>
+<p>C is an hyperparameter</p>
+</blockquote>
+</div>
+<h3 id="non-linear-problems">Non-linear problems</h3>
+<p>Let's take a simple dataset... which is non-linearly separable.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>How to find the hyperplan that separate the two classes ?</p>
+</div>
+<p><img alt="non-linear-data" src="../assets/img_11.png" /></p>
+<blockquote>
+<p>Here, we are dealing with a 1 feature (X) dataset</p>
+</blockquote>
+<h3 id="making-a-dataset-linearly-separable">Making a dataset linearly separable</h3>
+<p>One approach to make a non-linearly separable data set, into a separable one is to create additional features derived 
+from the original one. In our example, it means we will transform one feature, to two features.
+In other words, we are increasing the dimensionality of the feature space.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By increasing the dimensionality of the feature space, we are introducing some additional computations.
+It can be a problem on large datasets.</p>
+</div>
+<h4 id="polynomial-features">Polynomial features</h4>
+<p><img alt="polynom-2" src="../assets/img_12.png" /></p>
+<p>Now, it's really easy to find the hyperplane that separate the two classes
+<br><br></p>
+<h4 id="radial-basis-function">Radial basis function</h4>
+<p>Let's take another example, a dataset which contains two features :
+<img alt="polynom-2" src="../assets/img_13.png" /></p>
+<blockquote>
+<p>Credit to James Thorn</p>
+</blockquote>
+<p>Another approach (very common using SVM) is to use radial basis function to increase dimensionality.
+The RBF is defined as:</p>
+<div class="arithmatex">\[
+K(x_i, x_j) = \exp(-\gamma ||x_i - x_j||^2)
+\]</div>
+<p>By applying this transformation, we're increasing the dimension of our dataset (a third dimension is added).</p>
+<p>Let's visualize the result:</p>
+<p><img alt="3D" src="https://miro.medium.com/v2/resize:fit:1048/1*p-rc6-N4Bma6gATeKqR_yg.gif" /></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>We can see that the data is now linearly separable by an horizontal plan, around <code>r=0.7</code></p>
+</div>
+<h3 id="the-kernel">The kernel</h3>
+<p>We have previously seen that performing transformations of a feature space to a higher dimension can lead to extensive
+computation. What is the solution ? </p>
+<p><strong>Let's introduce the kernel trick !</strong></p>
+<p>The kernel trick is a technique used to implicitly transform the input data into a higher-dimensional space without 
+actually computing the transformed data points. In SVMs, the kernel function is used to transform the input data into a 
+higher-dimensional space where the data points may become linearly separable. Instead of explicitly computing the 
+transformed data points, the kernel function is used to compute the dot product between pairs of data points in the 
+transformed space, without actually computing the transformed data points.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>SVMs can efficiently work with high-dimensional data, without explicitly computing the transformed data points. 
+This makes SVMs computationally efficient and allows them to handle large amounts of data.</p>
+</div>
+<h3 id="in-practice">In practice</h3>
+<p>Let's take a simple classification example.</p>
+<blockquote>
+<p>For the example, I will generate some data using sklearn</p>
+</blockquote>
+<h5 id="step-1-importing-the-necessary-modules">Step 1 - Importing the necessary modules</h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">svm</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></code></pre></div>
+<h5 id="step-2-create-fake-date-you-dont-need-to-remember-this">Step 2 - Create fake date (you don't need to remember this)</h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">0.60</span><span class="p">)</span>
+</span></code></pre></div>
+<h5 id="step-3-visualize-the-data">Step 3 - Visualize the data</h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Plot all the data points</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="n">colors</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">y</span><span class="p">])</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Feature 1&#39;</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Feature 2&#39;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;SVM Classifier&#39;</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Add a legend for the class labels</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">handles</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([],</span> <span class="p">[],</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Class </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">]</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">handles</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+<p><img alt="input-svm" src="../assets/img_14.png" /></p>
+<h5 id="step-3-creating-an-instance-of-svm-classifier-and-fit-it-to-the-data">Step 3 - Creating an instance of SVM Classifier and fit it to the data</h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">svm_classifier</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">svm_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>As you can see, it's very similar to what we have done with other type of models.</p>
+</div>
+<h5 id="step-4-make-prediction-on-new-data">Step 4 - Make prediction on new data</h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">new_data</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">predicted_labels</span> <span class="o">=</span> <span class="n">svm_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">new_data</span><span class="p">)</span>
+</span></code></pre></div>
+<h5 id="step-5-lets-visualize-our-predictions">Step 5 - Let's visualize our predictions</h5>
+<p>By adding the following code to our previous visualization code, you can see the new datapoints and their predicted 
+labels
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_data</span><span class="p">)):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">new_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">predicted_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><img alt="input-svm" src="../assets/img_15.png" /></p>
+<h4 id="additional-information">Additional information</h4>
+<p>As you can see, you can pass multiple parameters to the SVC class:</p>
+<ul>
+<li><code>kernel</code>, default = 'rbf'</li>
+<li><code>C</code>, default = <code>1</code></li>
+</ul>
+<p>Those two hyperparameters are particularly important when building an SVM model.
+To choose their values, you can perform <code>parameter tuning</code>.</p>
+<p>To tune these hyperparameters, one approach is to use a grid search, which involves trying out a range of values for 
+each parameter and selecting the combination that gives the best performance on a validation set. Another approach is to
+use a randomized search, which randomly samples from the hyperparameter space, and again selects the combination that 
+gives the best performance on a validation set</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.tabs.link", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

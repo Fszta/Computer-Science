@@ -72,7 +72,10 @@ nav:
           - K Nearest neighbor: machine-learning/knn.md
           - Decision tree: machine-learning/decision_tree.md
           - SVM : machine-learning/svm.md
+          - Neural network: machine-learning/neural-network.md
       - Practice:
           - Exercise: machine-learning/exercice.md
           - Exercise 2: machine-learning/exercise-2.md
+          - Exercise 3: machine-learning/exercise-3.md
+
 

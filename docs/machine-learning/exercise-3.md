@@ -39,6 +39,17 @@ If you plan to develop on your local system, installed the necessary libraries :
 - numpy
 
 
+!!! tip "Best practice"
+    
+    It's a best practice to create a virtual environment when starting a new project. Then, you will install your 
+    dependencies in this environment (only). You can do it as follows : 
+    
+    * `python3 -m venv env` Create a virtual environment
+    * `source env/bin/activate` Activate the environment
+    * `pip install your_package` Install a package
+
+    
+
 > We will use Keras, which is included in tensorflow
 
 ### 3 - Split your data into train and validation

@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../knn/">
+        <link rel="prev" href="../neural-network/">
       
       
-        <link rel="next" href="../svm/">
+        <link rel="next" href="../exercice/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
-        <title>Decision tree - Computer science</title>
+        <title>Transfer learning - Computer science</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#decision-tree" class="md-skip">
+        <a href="#transfer-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Decision tree
+              Transfer learning
             
           </span>
         </div>
@@ -596,69 +596,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Decision tree
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../decision_tree/" class="md-nav__link">
         Decision tree
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#decision-tree" class="md-nav__link">
-    Decision Tree
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-decision-tree" class="md-nav__link">
-    What is a decision tree ?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pros-cons" class="md-nav__link">
-    Pros &amp; Cons
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deep-dive-in-the-algorithm" class="md-nav__link">
-    Deep dive in the algorithm
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -696,11 +638,93 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../transfer-learning/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Transfer learning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Transfer learning
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-transfer-learning" class="md-nav__link">
+    What is transfer-learning ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-can-should-i-use-transfer-learning" class="md-nav__link">
+    When can (should) I use Transfer learning ?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attention-points" class="md-nav__link">
+    Attention points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-transfer-learning-with-keras" class="md-nav__link">
+    How to use transfer learning with keras ?
+  </a>
+  
+    <nav class="md-nav" aria-label="How to use transfer learning with keras ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-with-vgg16-model" class="md-nav__link">
+    Example with VGG16 model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information-vgg16-architecture" class="md-nav__link">
+    Additional information - VGG16 Architecture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -826,6 +850,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -834,30 +860,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#decision-tree" class="md-nav__link">
-    Decision Tree
+  <a href="#what-is-transfer-learning" class="md-nav__link">
+    What is transfer-learning ?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-decision-tree" class="md-nav__link">
-    What is a decision tree ?
+  <a href="#when-can-should-i-use-transfer-learning" class="md-nav__link">
+    When can (should) I use Transfer learning ?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pros-cons" class="md-nav__link">
-    Pros &amp; Cons
+  <a href="#attention-points" class="md-nav__link">
+    Attention points
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deep-dive-in-the-algorithm" class="md-nav__link">
-    Deep dive in the algorithm
+  <a href="#how-to-use-transfer-learning-with-keras" class="md-nav__link">
+    How to use transfer learning with keras ?
   </a>
+  
+    <nav class="md-nav" aria-label="How to use transfer learning with keras ?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-with-vgg16-model" class="md-nav__link">
+    Example with VGG16 model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-information-vgg16-architecture" class="md-nav__link">
+    Additional information - VGG16 Architecture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -876,89 +922,274 @@
                   
 
 
-  <h1>Decision tree</h1>
-
-<h2 id="decision-tree">Decision Tree</h2>
-<h2 id="what-is-a-decision-tree">What is a decision tree ?</h2>
-<p>A decision tree is a non-parametric supervised learning algorithm used for <code>classification</code> and <code>regression</code> tasks.
-It is a tree-like structure where each internal node represents a test on an attribute or feature, 
-each branch represents the outcome of the test, and each leaf node represents a class label or a numerical value that 
-corresponds to a prediction.</p>
-<div class="admonition example">
-<p class="admonition-title">An abstract example</p>
-<pre class="mermaid"><code>
-    graph TD
-    A{Is feature X &gt;= 5?} --&gt;|yes| B{Is feature Y &gt;= 7?}
-    B --&gt;|yes| C[Class 1 - leaf node]
-    B --&gt;|no| D[Class 2 - leaf node]
-    A --&gt;|no| E{Is feature X &gt;= 3?}
-    E --&gt;|yes| F[Class 3 - leaf node]
-    E --&gt;|no| D[Class 4 - leaf node]
-
-</code></pre>
-</div>
-<p>The goal of a decision tree algorithm is to learn a model that can accurately predict the target variable for new, 
-unseen data based on a set of training examples. The algorithm works by recursively splitting the data into subsets
-based on the values of the attributes or features, until each subset belongs to a single class or has reached a 
-stopping criterion.</p>
-<div class="admonition question">
-<p class="admonition-title">Can i use it for classification and regression?</p>
-</div>
-<p>There are two main types of decision trees: classification trees and regression trees. Classification trees are used 
-for predicting categorical class labels, while regression trees are used for predicting continuous numerical values.</p>
-<div class="admonition question">
-<p class="admonition-title">How is built a decision tree ?</p>
-</div>
-<p>To build a decision tree, the algorithm follows a top-down, greedy approach that recursively partitions the data based
-on the attribute that maximizes the information gain or minimizes the impurity at each node. 
-The information gain measures the reduction in entropy or impurity of the target variable by splitting the data on 
-a particular attribute, while the impurity measures the degree of uncertainty or randomness in the target variable.</p>
-<p>Once the tree is built, the algorithm can use it to make predictions on new, unseen data by traversing the tree from
-the root node down to a leaf node based on the values of the attributes. At each internal node, the algorithm checks 
-the value of the corresponding attribute, and follows the appropriate branch based on the outcome of the test. 
-At each leaf node, the algorithm outputs the class label or numerical value that corresponds to the prediction.</p>
-<h2 id="pros-cons">Pros &amp; Cons</h2>
+<h1 id="transfer-learning">Transfer-learning</h1>
+<h2 id="what-is-transfer-learning">What is transfer-learning ?</h2>
+<p>Transfer learning is the process of using "knowledge" gained from training a model on one task to improve the 
+performance of a model on a different task.</p>
+<p>The pre-trained model used in transfer learning has been trained on a large-scale  dataset, such as ImageNet, to 
+recognize a wide range of visual concepts. These pre-trained models are able to learn useful features that can be 
+generalized to many tasks, and have proven to be effective at a variety of computer vision tasks such as image 
+classification, object detection, and image segmentation.</p>
+<p>To apply transfer learning, the pre-trained model is typically modified by adding new layers on top of the existing 
+layers. These new layers are then trained on the new dataset to adapt the pre-trained model to the new task. 
+The weights of the pre-trained layers may be frozen or fine-tuned during training, depending on the size of the new 
+dataset and the similarity of the new task to the original task.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You can easily visualize a decision tree, have a look to <code>sklearn.tree.plot_tree</code></p>
+<p>Transfer learning is a good way to significantly reduces the amount of time, data, and computing resources needed to
+train a new model from scratch.</p>
 </div>
-<p>Decision trees have several advantages, including their interpretability, ease of use, and ability to handle both 
-categorical and numerical data. However, they also have some limitations, such as their tendency to overfit the 
-training data if not pruned or regularized, their sensitivity to small changes in the data, and their inability to 
-capture complex interactions between features.</p>
-<h2 id="deep-dive-in-the-algorithm">Deep dive in the algorithm</h2>
-<div class="admonition question">
-<p class="admonition-title">How the algorithm work for a classification problem ?</p>
+<h2 id="when-can-should-i-use-transfer-learning">When can (should) I use Transfer learning ?</h2>
+<p>Transfer learning can be used in different scenarios : </p>
+<ul>
+<li>Small Dataset: When you have a small dataset, transfer learning can help you leverage the pre-trained model's knowledge
+and improve your model's accuracy.</li>
+<li>
+<p>Lack of Compute Resources: Training a deep neural network from scratch can be computationally expensive. 
+Transfer learning can help you reduce the time and resources required to train your model.</p>
+</li>
+<li>
+<p>Time Constraints: Transfer learning can help you quickly build and train models for specific tasks, such as building 
+a proof-of-concept or prototype.</p>
+</li>
+<li>
+<p>Similar Tasks: When the new task is related to the original task that the pre-trained model was trained on, transfer 
+learning can help you improve your model's performance.</p>
+</li>
+</ul>
+<h2 id="attention-points">Attention points</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Transfer learning is not a magic solution!</p>
 </div>
-<p>For classification problems, decision trees commonly use the Gini impurity or the information gain (also called entropy)
-to measure the quality of a split. The Gini impurity measures the probability of misclassifying a randomly chosen sample
-from the dataset, while the information gain measures the reduction in entropy (i.e., uncertainty) after the split. 
-The split that minimizes the impurity or maximizes the information gain is chosen.</p>
-<div class="admonition question">
-<p class="admonition-title">How the algorithm work for a regression problem ?</p>
+<p>There are some cases in which transfer learning will not be efficient, for example : </p>
+<ul>
+<li>Task-Specific Features: If your new task involves features that are specific to that task and not present in the 
+pre-trained model</li>
+<li>Data Incompatibility: If the pre-trained model was trained on data that is substantially different from your new task,
+such as different image types (if it's trained on high resolution images, and you only have low quality images for 
+example).</li>
+</ul>
+<h2 id="how-to-use-transfer-learning-with-keras">How to use transfer learning with keras ?</h2>
+<p>Instead of building a model in the "classic" way, you will import an existing model and its weights.</p>
+<p>Keras comes with a <a href="https://keras.io/api/applications/#available-models">module applications</a> which contains the most 
+common architectures with pre-trained weights. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When choosing a base model, you need to consider its size, the time per inference etc... based on your specific 
+application.</p>
 </div>
-<p>For regression problems, decision trees commonly use the mean squared error (MSE) to measure the quality of a split.
-The MSE measures the variance of the target variable within each subset of the split. 
-The split that minimizes the MSE is chosen.</p>
-<p>Once the best split is chosen, the decision tree algorithm partitions the input data into two subsets based on the 
-split, and then recursively applies the same process to each subset until a stopping criterion is met.
-The stopping criterion could be a maximum depth of the tree, a minimum number of samples in each leaf node,
-or other criteria.</p>
-<div class="admonition example">
-<p class="admonition-title">A less abstract example</p>
-<p>Imagine you are developing an embedded system to monitor heart rate activity, what kind on information can you deduce 
-from the physiological data ?</p>
-<pre class="mermaid"><code>
-    graph TD;
-    A((Heart Rate &lt;= 80))
-    A --&gt; |Yes| B((Age &lt;= 30))
-    A --&gt; |No| C((Age &lt;= 40))
-    B --&gt; |Yes| D(At Rest)
-    B --&gt; |No| E(Not At Rest)
-    C --&gt; |Yes| E
-    C --&gt; |No| F(At Rest)
-</code></pre>
+<p>Below you will find some models available with their corresponding caracteristics performance :</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Size (MB)</th>
+<th>Top-1 Accuracy</th>
+<th>Top-5 Accuracy</th>
+<th>Parameters</th>
+<th>Depth</th>
+<th>Time (ms) per inference step (CPU)</th>
+<th>Time (ms) per inference step (GPU)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Xception</td>
+<td>88</td>
+<td>79.0%</td>
+<td>94.5%</td>
+<td>22.9M</td>
+<td>81</td>
+<td>109.4</td>
+<td>8.1</td>
+</tr>
+<tr>
+<td>VGG16</td>
+<td>528</td>
+<td>71.3%</td>
+<td>90.1%</td>
+<td>138.4M</td>
+<td>16</td>
+<td>69.5</td>
+<td>4.2</td>
+</tr>
+<tr>
+<td>VGG19</td>
+<td>549</td>
+<td>71.3%</td>
+<td>90.0%</td>
+<td>143.7M</td>
+<td>19</td>
+<td>84.8</td>
+<td>4.4</td>
+</tr>
+<tr>
+<td>ResNet50</td>
+<td>98</td>
+<td>74.9%</td>
+<td>92.1%</td>
+<td>25.6M</td>
+<td>107</td>
+<td>58.2</td>
+<td>4.6</td>
+</tr>
+<tr>
+<td>ResNet50V2</td>
+<td>98</td>
+<td>76.0%</td>
+<td>93.0%</td>
+<td>25.6M</td>
+<td>103</td>
+<td>45.6</td>
+<td>4.4</td>
+</tr>
+<tr>
+<td>ResNet101</td>
+<td>171</td>
+<td>76.4%</td>
+<td>92.8%</td>
+<td>44.7M</td>
+<td>209</td>
+<td>89.6</td>
+<td>5.2</td>
+</tr>
+<tr>
+<td>ResNet101V2</td>
+<td>171</td>
+<td>77.2%</td>
+<td>93.8%</td>
+<td>44.7M</td>
+<td>205</td>
+<td>72.7</td>
+<td>5.4</td>
+</tr>
+<tr>
+<td>ResNet152</td>
+<td>232</td>
+<td>76.6%</td>
+<td>93.1%</td>
+<td>60.4M</td>
+<td>311</td>
+<td>127.4</td>
+<td>6.5</td>
+</tr>
+<tr>
+<td>ResNet152V2</td>
+<td>232</td>
+<td>78.0%</td>
+<td>94.2%</td>
+<td>60.4M</td>
+<td>307</td>
+<td>107.5</td>
+<td>6.6</td>
+</tr>
+<tr>
+<td>InceptionV3</td>
+<td>92</td>
+<td>77.9%</td>
+<td>93.7%</td>
+<td>23.9M</td>
+<td>189</td>
+<td>42.2</td>
+<td>6.9</td>
+</tr>
+<tr>
+<td>InceptionResNetV2</td>
+<td>215</td>
+<td>80.3%</td>
+<td>95.3%</td>
+<td>55.9M</td>
+<td>449</td>
+<td>130.2</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>MobileNet</td>
+<td>16</td>
+<td>70.4%</td>
+<td>89.5%</td>
+<td>4.3M</td>
+<td>55</td>
+<td>22.6</td>
+<td>3.4</td>
+</tr>
+<tr>
+<td>MobileNetV2</td>
+<td>14</td>
+<td>71.3%</td>
+<td>90.1%</td>
+<td>3.5M</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-with-vgg16-model">Example with VGG16 model</h3>
+<p>For example, if you want to import VGG16 model : 
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">keras.applications.vgg16</span> <span class="kn">import</span> <span class="n">VGG16</span><span class="p">,</span> <span class="n">preprocess_input</span>
+</span></code></pre></div></p>
+<p>Then you will load the model with some specific weights (here the one from imagenet training):</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Load pre-trained CNN - Here VGG16 trained on image-net dataset</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">base_model</span> <span class="o">=</span> <span class="n">VGG16</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">,</span> <span class="n">include_top</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Here we're passing the value <code>imagenet</code> to the <code>weights</code> parameters, which indicate to load the weights of the model
+trained on ImageNet dataset. You can also provide a custom weights file (if you want to use your own model)</p>
 </div>
+<p>As we don't want the weights from the pre-trained model being updated, we need to freeze them :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Freeze all layers of the pre-trained model</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">base_model</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">layer</span><span class="o">.</span><span class="n">trainable</span> <span class="o">=</span> <span class="kc">False</span>
+</span></code></pre></div>
+<p>Then, we add our own classification layer, specific to the model we want to train:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">x</span> <span class="o">=</span> <span class="n">base_model</span><span class="o">.</span><span class="n">output</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">x</span> <span class="o">=</span> <span class="n">Flatten</span><span class="p">()(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">x</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">predictions</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s1">&#39;random_uniform&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Finally, we can build &amp; compile our model, as usual :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Build model</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">predictions</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Compile the model</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As each model may have been train with some specific image format, you can use <code>preprocess_input</code> function
+in order to process your images, according to what the model expects as input.
+You don't need to know which operations are performed (scaling etc...)</p>
+<p>You can use it directly when building an ImageGenerator object:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">train_datagen</span> <span class="o">=</span>  <span class="n">ImageDataGenerator</span><span class="p">(</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">rotation_range</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">width_shift_range</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">height_shift_range</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">preprocessing_function</span><span class="o">=</span><span class="n">preprocess_input</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">shear_range</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">zoom_range</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">horizontal_flip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">test_datagen</span> <span class="o">=</span> <span class="n">ImageDataGenerator</span><span class="p">(</span><span class="n">preprocessing_function</span><span class="o">=</span><span class="n">preprocess_input</span><span class="p">)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">train_generator</span> <span class="o">=</span> <span class="n">train_datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="sa">f</span><span class="s1">&#39;cats_and_dogs/train&#39;</span><span class="p">,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="n">test_generator</span> <span class="o">=</span> <span class="n">test_datagen</span><span class="o">.</span><span class="n">flow_from_directory</span><span class="p">(</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>        <span class="sa">f</span><span class="s1">&#39;cats_and_dogs/test&#39;</span><span class="p">,</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        <span class="n">batch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<h3 id="additional-information-vgg16-architecture">Additional information - VGG16 Architecture</h3>
+<p><img alt="img23.png" src="../assets/img23.png" /></p>
 
 
 
